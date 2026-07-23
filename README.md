@@ -1,16 +1,30 @@
-# My MLOps Project
+# Early DVC Practice Repository
 
-A minimal practice repository for learning Git basics and DVC-based data versioning.
+An early data-versioning practice repository created while developing the workflow that later expanded into [AI Job Market Trend Analysis](https://github.com/dnddlek8275/AI_Job_Market_Trend_Analysis).
 
-The project tracks a small Titanic dataset with DVC and configures Google Drive as the default DVC remote. It is an initial data-versioning exercise rather than a complete model-training or deployment project.
+This repository preserves the initial Git, DVC, and Google Drive remote-storage experiments. The main project extends that foundation with AI job market data, model comparison, MLflow experiment tracking, evaluation, and model registration.
 
-## What Is Included
+## Continued Project
 
-- A Git repository with a basic commit history
-- DVC project configuration
+Current development and the complete machine learning workflow are available in:
+
+### [AI Job Market Trend Analysis](https://github.com/dnddlek8275/AI_Job_Market_Trend_Analysis)
+
+The main project includes:
+
+- DVC-based dataset management
+- Logistic Regression, Random Forest, XGBoost, LightGBM, and CatBoost experiments
+- MLflow parameter, metric, and artifact tracking
+- Model evaluation and comparison
+- MLflow Model Registry integration
+- Production alias assignment for the best model
+
+## What This Repository Contains
+
+- Initial Git and DVC practice
 - A Google Drive DVC remote named `mlops_dvc_storage`
-- A DVC metadata file for `data/titanic.csv`
-- A small text file used for Git practice
+- A small Titanic dataset tracking example
+- Basic files used to verify the Git workflow
 
 ## Repository Structure
 
@@ -26,36 +40,20 @@ The project tracks a small Titanic dataset with DVC and configures Google Drive 
 └── README.md
 ```
 
-## Data Versioning Flow
+## Data Versioning Example
 
-The actual `titanic.csv` file is not stored directly in Git. Git tracks `data/titanic.csv.dvc`, which records the dataset path, size, and content hash. DVC uses that metadata to restore the matching file from the configured remote.
+The actual `titanic.csv` file is not stored directly in Git. Git tracks `data/titanic.csv.dvc`, which records the dataset path and content hash. DVC uses this metadata to restore the matching file from the configured Google Drive remote.
 
-Restore tracked data with:
+Restore the tracked data with:
 
 ```bash
 dvc pull
 ```
 
-After changing the dataset, update its DVC metadata with:
+Access depends on the appropriate Google Drive credentials and permissions.
 
-```bash
-dvc add data/titanic.csv
-```
+## Status
 
-Then commit the updated `.dvc` metadata file through Git.
+This repository is retained as a record of the initial DVC learning process. It is not an independent production project and is not actively developed.
 
-## DVC Remote
-
-The repository configures a Google Drive remote as the default DVC storage. Access to the remote depends on the appropriate Google Drive credentials and permissions.
-
-## Current Scope
-
-This repository does not currently include:
-
-- Data preprocessing code
-- Model training or evaluation code
-- MLflow experiment tracking
-- An inference API
-- CI/CD or deployment configuration
-
-Those components should only be added if the repository grows beyond its current DVC learning purpose.
+For the current implementation, see [AI Job Market Trend Analysis](https://github.com/dnddlek8275/AI_Job_Market_Trend_Analysis).
